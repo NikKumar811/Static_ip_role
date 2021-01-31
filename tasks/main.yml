@@ -1,0 +1,11 @@
+---
+# tasks file for static_ip
+- name: "Updating configuration file to make static IP"
+  template: 
+     src: 'ifcfg-enp0s3'
+     dest: /etc/sysconfig/network-scripts/ifcfg-{{ ansible_facts['default_ipv4']['interface'] }}
+
+- name: 
+  command: reboot
+  ignore_errors: True
+
