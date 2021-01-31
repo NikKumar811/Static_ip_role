@@ -5,7 +5,7 @@
      src: 'ifcfg-enp0s3'
      dest: /etc/sysconfig/network-scripts/ifcfg-{{ ansible_facts['default_ipv4']['interface'] }}
 
-- name: 
+- name: "reboots the computer"
   command: reboot
   ignore_errors: True
 
